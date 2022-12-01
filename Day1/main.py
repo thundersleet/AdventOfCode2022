@@ -2,6 +2,11 @@ import common.file_manipulation as file_manipulation
 
 
 def get_elf_calorie_list(filename):
+    """
+    function to get a list of the total calories each elf is carrying
+    :param filename: the filename of the problem input
+    :return: a list of elf calorie sums, in order
+    """
     lines = file_manipulation.read_lines(filename)
     calorie_sum = 0
     elf_calories = []
@@ -15,12 +20,22 @@ def get_elf_calorie_list(filename):
 
 
 def day1_part1(filename):
+    """
+    a function to calculate the answer to Day 1 Part 1
+    :param filename: the filename of the problem input
+    :return: the answer to Day 1 Part 1
+    """
     elf_calorie_list = get_elf_calorie_list(filename)
 
     return max(elf_calorie_list)
 
 
 def day1_part2(filename):
+    """
+    a function to calculate the answer to Day 1 Part 2
+    :param filename: the filename of the problem input
+    :return: the answer to Day 1 Part 2
+    """
     elf_calorie_list = get_elf_calorie_list(filename)
     elf_calorie_list_sorted = sorted(elf_calorie_list)
     top3_elf_calories = elf_calorie_list_sorted[-3:]
